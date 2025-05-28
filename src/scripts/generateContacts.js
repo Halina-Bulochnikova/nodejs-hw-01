@@ -1,8 +1,8 @@
-import { readContacts } from "../utils/readContacts";
-import { writeContacts } from "../utils/writeContacts";
-import { createFakeContact } from '../utils/createFakeContact';
+import { readContacts } from "../utils/readContacts.js";
+import { writeContacts } from "../utils/writeContacts.js";
+import { createFakeContact } from '../utils/createFakeContact.js';
 
-const generateContacts = async (number) => {
+export const generateContacts = async (number) => {
     try {
         const existingContacts = await readContacts();
         const newContacts = Array.from({ length: number }, () => createFakeContact());
@@ -16,4 +16,4 @@ const generateContacts = async (number) => {
     }
 };
 
-generateContacts(5);
+generateContacts(8);
